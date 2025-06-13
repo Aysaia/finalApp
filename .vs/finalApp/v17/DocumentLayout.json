@@ -1,0 +1,141 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\isai\\source\\repos\\finalApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|C:\\Users\\isai\\source\\repos\\finalApp\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|C:\\Users\\isai\\source\\repos\\finalApp\\textbox.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|solutionrelative:textbox.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|C:\\Users\\isai\\source\\repos\\finalApp\\image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|solutionrelative:image.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|C:\\Users\\isai\\source\\repos\\finalApp\\textbox.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|solutionrelative:textbox.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|C:\\Users\\isai\\source\\repos\\finalApp\\window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|solutionrelative:window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|C:\\Users\\isai\\source\\repos\\finalApp\\page.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|solutionrelative:page.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|C:\\Users\\isai\\source\\repos\\finalApp\\shape.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9850B9EC-568B-408C-8402-394B9A003B11}|finalApp.vcxproj|solutionrelative:shape.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 230,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "image.h",
+              "DocumentMoniker": "C:\\Users\\isai\\source\\repos\\finalApp\\image.h",
+              "RelativeDocumentMoniker": "image.h",
+              "ToolTip": "C:\\Users\\isai\\source\\repos\\finalApp\\image.h",
+              "RelativeToolTip": "image.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-12T06:03:26.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\isai\\source\\repos\\finalApp\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\isai\\source\\repos\\finalApp\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-12T17:18:40.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "textbox.cpp",
+              "DocumentMoniker": "C:\\Users\\isai\\source\\repos\\finalApp\\textbox.cpp",
+              "RelativeDocumentMoniker": "textbox.cpp",
+              "ToolTip": "C:\\Users\\isai\\source\\repos\\finalApp\\textbox.cpp",
+              "RelativeToolTip": "textbox.cpp",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACMAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-12T17:29:31.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "page.h",
+              "DocumentMoniker": "C:\\Users\\isai\\source\\repos\\finalApp\\page.h",
+              "RelativeDocumentMoniker": "page.h",
+              "ToolTip": "C:\\Users\\isai\\source\\repos\\finalApp\\page.h",
+              "RelativeToolTip": "page.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-12T05:43:26.306Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "window.h",
+              "DocumentMoniker": "C:\\Users\\isai\\source\\repos\\finalApp\\window.h",
+              "RelativeDocumentMoniker": "window.h",
+              "ToolTip": "C:\\Users\\isai\\source\\repos\\finalApp\\window.h",
+              "RelativeToolTip": "window.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-12T05:39:33.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "textbox.h",
+              "DocumentMoniker": "C:\\Users\\isai\\source\\repos\\finalApp\\textbox.h",
+              "RelativeDocumentMoniker": "textbox.h",
+              "ToolTip": "C:\\Users\\isai\\source\\repos\\finalApp\\textbox.h",
+              "RelativeToolTip": "textbox.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-12T17:54:48.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "shape.h",
+              "DocumentMoniker": "C:\\Users\\isai\\source\\repos\\finalApp\\shape.h",
+              "RelativeDocumentMoniker": "shape.h",
+              "ToolTip": "C:\\Users\\isai\\source\\repos\\finalApp\\shape.h",
+              "RelativeToolTip": "shape.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-06-12T18:11:06.503Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
