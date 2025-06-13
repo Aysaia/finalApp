@@ -29,6 +29,13 @@ bool Page::Render(SDL_Renderer* renderer) {
 	}
 	return true;
 }
+void Page::CheckButtons(int x, int y) {
+	for (Button* button : buttons) {
+		if (button->Hover(x, y)) {
+			button->Click();
+		}
+	}
+}
 int Page::AddShape(Shape* shape) {
 	if (shape == nullptr) {
 		return -1;

@@ -47,8 +47,7 @@ bool Window::Start()
 			case SDL_QUIT:
 				quit = true;
 			case SDL_MOUSEBUTTONDOWN:
-				std::cout << "Mouse button pressed at ("
-					<< event.button.x << ", " << event.button.y << ")\n";
+				pages[currentPageIndex]->CheckButtons(event.button.x, event.button.y);
 			}
 		}
 		SDL_Delay(round(1000 / frameRate));

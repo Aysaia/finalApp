@@ -9,6 +9,7 @@ public:
 	Page();
 	~Page();
 	bool Render(SDL_Renderer*);
+	void CheckButtons(int x, int y);
 
 	void SetBackgroundColor(SDL_Color);
 	SDL_Color GetBackgroundColor();
