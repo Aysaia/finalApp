@@ -20,14 +20,12 @@ Textbox::Textbox(int x, int y, int w, int h, std::string t, TTF_Font* f, SDL_Col
 Textbox::~Textbox() {
 }
 
-void Textbox::LoadText(SDL_Renderer* renderer) {
-	if (surface) SDL_FreeSurface(surface);
-	if (texture) SDL_DestroyTexture(texture);
+void Textbox::LoadText(SDL_Renderer* renderer) {;
 
-	surface = TTF_RenderText_Solid(font, "text.c_str()", textColor);
+	surface = TTF_RenderText_Solid(font, text.c_str(), textColor);
 	texture = SDL_CreateTextureFromSurface(renderer, surface);
 
-	rect = { x, y, width, height };
+	rect = { x, y, surface->w, surface->h};
 
 }
 
