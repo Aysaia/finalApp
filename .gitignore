@@ -23,7 +23,8 @@ mono_crash.*
 [Rr]eleases/
 x86/
 !x64/**/*.dll
-!x64/assets/
+!x64/assets/images/*.png
+!x64/assets/fonts/*.ttf
 x64/finalApp.exe
 x64/finalApp.pdb
 [Ww][Ii][Nn]32/
