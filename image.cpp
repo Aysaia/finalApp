@@ -8,7 +8,7 @@ Image::Image() : Shape() {
 }
 
 Image::Image(const std::string& fileName, int x, int y)
-    : Shape(0, 0, x, y), fileName(fileName) {
+    : Shape(x, y, x, y), fileName(fileName) {
     Load();
 }
 

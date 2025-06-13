@@ -13,11 +13,11 @@ int main(int argc, char* argv[]) {
 	SDL_Color textColor = { 255, 255, 255 };
 	SDL_Color bgColor = { 0, 18, 18 };
 
-	std::string text = "Welcome to NewFlix!";
+	std::string text = "Welcome to Turlte!";
 
-	Window *window = new Window(1000, 800, "NewFlix", 60, bgColor);
+	Window *window = new Window(1000, 800, "Turtle", 60, bgColor);
 	
-	Image* shape1 = new Image("default.png", 350, 20);
+	Image* shape1 = new Image("default.png", 450, 200);
 	Textbox* textbox1 = new Textbox(40, 80, 500, 500, text, font, bgColor, textColor);
 
 
@@ -27,6 +27,7 @@ int main(int argc, char* argv[]) {
 
 	page1->AddShape(textbox1);
 	page1->AddShape(shape1);
+
 	window->AddPage(page1);
 
 	window->Start();

@@ -2,6 +2,7 @@
 
 #pragma region Constructor and Destructor
 Page::Page() {
+	backgroundColor = { 0, 0, 0, 255 };
 }
 Page::~Page() {
 	for (Shape* shape : shapes) {
