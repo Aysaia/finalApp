@@ -20,6 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="button.cpp" />
+    <ClCompile Include="components.cpp" />
+    <ClCompile Include="components.h" />
     <ClCompile Include="image.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="page.cpp" />

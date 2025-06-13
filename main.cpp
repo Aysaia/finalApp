@@ -32,23 +32,20 @@ int main(int argc, char* argv[]) {
 		return false;
 	}
 
-	SDL_Color textColor = { 255, 255, 255 };
-	SDL_Color bgColor = { 0, 18, 18 };
+	SDL_Color white = { 255, 255, 255 };
+	SDL_Color red = {250, 50, 10};
 
-	std::string text = "Welcome to Turtle!";
+	Window *window = new Window(1000, 750, "Rotten Apples", 60, white);
 
-	Window *window = new Window(1000, 750, "Turtle", 60, bgColor);
-	
-	Image* shape1 = new Image("default.png", 450, 200);
-	Textbox* textbox1 = new Textbox(40, 80, 500, 100, text, font, bgColor, textColor);
-
+	Image* logo = new Image("logo.png", 500-322/2, 25);
+	Shape* background = new Shape(0, 20, 1000, 120, red);
 
 	Page *page1 = new Page();
 
-	page1->SetBackgroundColor(bgColor);
+	page1->SetBackgroundColor(white);
 
-	page1->AddShape(textbox1);
-	page1->AddShape(shape1);
+	page1->AddShape(background);
+	page1->AddShape(logo);
 
 	window->AddPage(page1);
 
