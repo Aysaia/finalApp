@@ -1,5 +1,4 @@
 #include "videoposter.h"
-using namespace std;
 
 #pragma region VideoPoster
 VideoPoster::VideoPoster(string name, int x, int y, TTF_Font* font, SDL_Color fg, SDL_Color bg, Page* page){

@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
 
 
 	VideoPoster *superman = new VideoPoster("superman", 50, 200, font, black, red, page1);
-	Scroll *scroll1 = new Scroll(0, 100, 1000, 500, superman->GetShapes());
+	Scroll *scroll1 = new Scroll(0, 100, 1000, 500, 5, 0, superman->GetShapes());
 
 	page1->AddScroll(scroll1);
 
@@ -56,7 +56,6 @@ int main(int argc, char* argv[]) {
 	page1->AddShape(logo);
 	window->AddPage(page1);
 	window->Start();
-
 	TTF_CloseFont(font);
 	TTF_Quit();
 	SDL_Quit();
