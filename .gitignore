@@ -24,6 +24,8 @@ mono_crash.*
 x86/
 !x64/**/*.dll
 !x64/assets/
+x64/finalApp.exe
+x64/finalApp.pdb
 [Ww][Ii][Nn]32/
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
