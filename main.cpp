@@ -1,9 +1,8 @@
 #include <SDL.h>
 #include <SDL_ttf.h>
+#include "videoposter.h"
+#include "Scroll.h"
 #include "window.h"
-#include "image.h"
-#include "textbox.h"
-#include "button.h"
 #include<iostream>
 
 int TestFunction(int i) {
@@ -26,7 +25,7 @@ int main(int argc, char* argv[]) {
 	std::string fontPath = basePath + "assets/fonts/Sans.ttf";
 	std::cout << "Font path: " << fontPath << std::endl;
 
-	TTF_Font* font = TTF_OpenFont(fontPath.c_str(), 50);
+	TTF_Font* font = TTF_OpenFont(fontPath.c_str(), 100);
 	if (font == nullptr) {
 		std::cerr << "Font load error: " << TTF_GetError() << "/n";
 		return false;
@@ -34,21 +33,28 @@ int main(int argc, char* argv[]) {
 
 	SDL_Color white = { 255, 255, 255 };
 	SDL_Color red = {250, 50, 10};
+	SDL_Color black = { 0, 0, 0 };
 
 	Window *window = new Window(1000, 750, "Rotten Apples", 60, white);
 
 	Image* logo = new Image("logo.png", 500-322/2, 25);
 	Shape* background = new Shape(0, 20, 1000, 120, red);
 
-	Page *page1 = new Page();
+
+	Page* page1 = new Page();
 
 	page1->SetBackgroundColor(white);
 
+
+	VideoPoster *superman = new VideoPoster("superman", 50, 200, font, black, red, page1);
+	Scroll *scroll1 = new Scroll(0, 100, 1000, 500, 5, 0, superman->GetShapes());
+
+	page1->AddScroll(scroll1);
+
+
 	page1->AddShape(background);
 	page1->AddShape(logo);
-
 	window->AddPage(page1);
-
 	window->Start();
 	TTF_CloseFont(font);
 	TTF_Quit();

@@ -36,6 +36,14 @@ void Page::CheckButtons(int x, int y) {
 		}
 	}
 }
+void Page::Scrollin(int x, int y, int dx, int dy) {
+	for (Scroll * scroll : scrolls) {
+		if (scroll->Hover(x, y)) {
+			scroll->Move(dx, dy);
+		}
+	}
+}
+
 int Page::AddShape(Shape* shape) {
 	if (shape == nullptr) {
 		return -1;
@@ -50,6 +58,14 @@ int Page::AddButton(Button* button) {
 	buttons.push_back(button);
 	return buttons.size() - 1; 
 }
+int Page::AddScroll(Scroll* scroll) {
+	if (scroll == nullptr) {
+		return -1;
+	}
+	scrolls.push_back(scroll);
+	return scrolls.size() - 1;
+}
+
 Shape* Page::RemoveShape(int index) {
 	if (index < 0 || index >= shapes.size()) {
 		return nullptr; 

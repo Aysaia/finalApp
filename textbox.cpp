@@ -25,7 +25,10 @@ void Textbox::LoadText(SDL_Renderer* renderer) {;
 	surface = TTF_RenderText_Solid(font, text.c_str(), textColor);
 	texture = SDL_CreateTextureFromSurface(renderer, surface);
 
-	rect = { x, y, surface->w, surface->h};
+	float wh = static_cast<float>(surface->h) / surface->w;
+	
+	height = round(wh * width);
+	rect = { x, y, width, height};
 
 }
 

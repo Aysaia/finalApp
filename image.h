@@ -6,7 +6,8 @@
 class Image : public Shape {
 public:
     Image();
-    Image(const std::string& fileName, int x, int y);
+    Image(const std::string& fileName, int x, int y, double scale = 1);
+    Image(const std::string& fileName, int x, int y, int width);
     ~Image();
 
     void Load();
@@ -16,4 +17,5 @@ private:
     std::string basePath = "assets/images";
     std::string fileName;
     SDL_Surface* surface = nullptr;
+	double scale = 1;
 };

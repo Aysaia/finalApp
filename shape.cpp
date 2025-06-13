@@ -25,3 +25,17 @@ bool Shape::Render(SDL_Renderer* renderer) {
 SDL_Rect Shape::GetRect(){
     return { x, y, width, height };
 }
+
+bool Shape::Hover(int x, int y) {
+    SDL_Rect rect = GetRect();
+
+    if (x >= rect.x && x <= rect.x + rect.w && y >= rect.y && y <= rect.y + rect.h) {
+        return true;
+    }
+    return false;
+}
+
+void Shape::Move(int dx, int dy) {
+    x += dx;
+    y += dy;
+}

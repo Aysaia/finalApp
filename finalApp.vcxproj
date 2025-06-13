@@ -20,8 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="button.cpp" />
-    <ClCompile Include="components.cpp" />
-    <ClCompile Include="components.h" />
+    <ClCompile Include="Scroll.cpp" />
+    <ClCompile Include="videoposter.cpp" />
+    <ClCompile Include="videoposter.h" />
     <ClCompile Include="image.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="page.cpp" />
@@ -34,6 +35,7 @@
     <ClInclude Include="button.h" />
     <ClInclude Include="image.h" />
     <ClInclude Include="page.h" />
+    <ClInclude Include="Scroll.h" />
     <ClInclude Include="shape.h" />
     <ClInclude Include="window.h" />
   </ItemGroup>

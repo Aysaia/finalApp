@@ -8,12 +8,7 @@ Button::~Button() {
 
 }
 bool Button::Hover(int x, int y) {
-	SDL_Rect rect = shape->GetRect();
-
-	if (x >= rect.x && x <= rect.x + rect.w && y >= rect.y && y <= rect.y + rect.h) {
-		return true;
-	}
-	return false;
+	return shape->Hover(x, y);
 }
 void Button::Click() {
 	if (onClick) {

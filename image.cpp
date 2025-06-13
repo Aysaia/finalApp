@@ -7,9 +7,20 @@ Image::Image() : Shape() {
     Load();
 }
 
-Image::Image(const std::string& fileName, int x, int y)
+Image::Image(const std::string& fileName, int x, int y, double scale)
+    : Shape(x, y, x, y), fileName(fileName) {
+	this->scale = scale;
+    Load();
+}
+Image::Image(const std::string& fileName, int x, int y, int width)
     : Shape(x, y, x, y), fileName(fileName) {
     Load();
+
+    float wh = static_cast<float>(surface->h) / surface->w;
+    height = round(wh * width);
+
+    this->width = width;
+	this->height = height;    
 }
 
 Image::~Image() {
@@ -31,8 +42,8 @@ void Image::Load() {
         return;
     }
 
-    width = surface->w;
-    height = surface->h;
+    width = surface->w*scale;
+    height = surface->h*scale;
 }
 
 bool Image::Render(SDL_Renderer* renderer) {

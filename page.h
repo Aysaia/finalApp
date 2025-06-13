@@ -1,8 +1,10 @@
 #pragma once
-#include "shape.h"
-#include "button.h"
 #include <SDL.h>
 #include <vector>
+
+#include "shape.h"
+#include "button.h"
+#include "scroll.h"
 
 class Page {
 public:
@@ -16,10 +18,15 @@ public:
 
 	int AddShape(Shape* shape);
 	int AddButton(Button* button);
-	
+	int AddScroll(Scroll* scroll);
+
+	void Scrollin(int x, int y, int dx, int dy);
+
+
 	Shape* RemoveShape(int index);
 
 private:
+	std::vector<Scroll*> scrolls;
 	std::vector<Shape*> shapes;
 	std::vector<Button*> buttons;
 	SDL_Color backgroundColor;

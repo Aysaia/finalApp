@@ -48,6 +48,10 @@ bool Window::Start()
 				quit = true;
 			case SDL_MOUSEBUTTONDOWN:
 				pages[currentPageIndex]->CheckButtons(event.button.x, event.button.y);
+			
+			case SDL_MOUSEWHEEL:
+
+				pages[currentPageIndex]->Scrollin(event.wheel.mouseX,event.wheel.mouseY,-event.wheel.x, event.wheel.y);
 			}
 		}
 		SDL_Delay(round(1000 / frameRate));
