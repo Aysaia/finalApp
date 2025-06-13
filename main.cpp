@@ -3,8 +3,13 @@
 #include "window.h"
 #include "image.h"
 #include "textbox.h"
+#include "button.h"
 #include<iostream>
 
+int TestFunction(int i) {
+	std::cout << "Test function called!" << i << std::endl;
+	return i;
+}
 
 int main(int argc, char* argv[]) {
 	if (TTF_Init() == -1) {

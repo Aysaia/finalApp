@@ -36,6 +36,13 @@ int Page::AddShape(Shape* shape) {
 	shapes.push_back(shape);
 	return shapes.size() - 1; 
 }
+int Page::AddButton(Button* button) {
+	if (button == nullptr) {
+		return -1;
+	}
+	buttons.push_back(button);
+	return buttons.size() - 1; 
+}
 Shape* Page::RemoveShape(int index) {
 	if (index < 0 || index >= shapes.size()) {
 		return nullptr; 

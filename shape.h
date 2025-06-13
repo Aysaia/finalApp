@@ -9,6 +9,8 @@ public:
     ~Shape();
 
     virtual bool Render(SDL_Renderer* renderer);
+	SDL_Rect GetRect();
+
 
 protected:
     int x, y;

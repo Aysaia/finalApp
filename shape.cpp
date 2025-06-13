@@ -21,3 +21,7 @@ bool Shape::Render(SDL_Renderer* renderer) {
 
     return true;
 }
+
+SDL_Rect Shape::GetRect(){
+    return { x, y, width, height };
+}

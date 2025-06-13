@@ -4,10 +4,13 @@
 class Button
 {
 public:
-	Button();
+	Button(std::function<void(int)> onClick, int i, Shape* shape);
 	~Button();
 
-	void OnPress();
+	bool Hover(int x, int y);
+	void Click();
 private:
+	int id;
+	Shape *shape;
 	std::function<void(int)> onClick;
 };
