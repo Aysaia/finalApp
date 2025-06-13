@@ -1,14 +1,21 @@
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include "window.h"
 #include "image.h"
 #include "textbox.h"
 #include<iostream>
 
 int main(int argc, char* argv[]) {
-	std::string sdlBasePath = SDL_GetBasePath();
-	std::string fullPath = std::string(sdlBasePath) + "/assets/fonts/Sans.ttf";
+	if (TTF_Init() == -1) {
+		std::cerr << "TTF_Init error: " << TTF_GetError() << "\n";
+		return false;
+	}
 
-	TTF_Font* font = TTF_OpenFont(fullPath.c_str(), 24);
+	TTF_Font* font = TTF_OpenFont("/assets/fonts/Sans.ttf", 24);
+	if (font == nullptr) {
+		std::cerr << "Font load error: " << TTF_GetError() << "\n";
+		return false;
+	}
 
 	SDL_Color textColor = { 255, 255, 255 };
 	SDL_Color bgColor = { 0, 18, 18 };
@@ -31,6 +38,8 @@ int main(int argc, char* argv[]) {
 	window->AddPage(page1);
 
 	window->Start();
-
+	TTF_CloseFont(font);
+	TTF_Quit();
+	SDL_Quit();
 	return 0;
 }
