@@ -13,6 +13,8 @@ Video::Video(int id, const std::string& name, const std::string& genre, float ra
 	: id(id), name(name), genre(genre), rating(rating) {
 }
 
+float Video::getRating() { return rating; }
+
 Video::~Video()
 {
 }

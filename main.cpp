@@ -12,11 +12,59 @@
 #include <iostream>
 #include <map>
 #include "pelicula.h"
+#include "series.h"
 
 int TestFunction(int i) {
 	std::cout << "Test function called!" << i << std::endl;
 	return i;
 }
+
+std::map<std::string, std::vector<Video>> GetShows(std::string filepath, TTF_Font* font, Page* page) {
+	std::ifstream file(filepath);
+	std::map<std::string, std::vector<Video>> genres;
+
+	std::string line;
+	int lineNumber = 1;
+
+	while (std::getline(file, line)) {
+		if (line.empty()) {
+			lineNumber++;
+			continue;
+		}
+
+		std::stringstream ss(line);
+		std::string sidStr, sname, genre, seasonsStr, ratingStr;
+
+		if (!std::getline(ss, sidStr, ',') ||
+			!std::getline(ss, sname, ',') ||
+			!std::getline(ss, genre, ',') ||
+			!std::getline(ss, seasonsStr, ',') ||
+			!std::getline(ss, ratingStr, ',')) {
+			std::cerr << "Malformed line at " << lineNumber << ": " << line << "\n";
+			lineNumber++;
+			continue;
+		}
+
+		try {
+			int sid = std::stoi(sidStr);
+			int seasons = std::stoi(seasonsStr);
+			float rating = std::stof(ratingStr);
+
+			// Create a Series object with no episodes for now
+			Series s(sid, sname, genre, rating, seasons);
+			genres[genre].push_back(s);
+		}
+		catch (const std::exception& e) {
+			std::cerr << "Conversion error at line " << lineNumber << ": " << e.what() << "\n";
+		}
+
+		lineNumber++;
+	}
+
+	file.close();
+	return genres;
+}
+
 
 std::map<std::string, std::vector<Video>> GetMovies(std::string filepath, TTF_Font* font, Page* page) {
 	std::ifstream file(filepath);
@@ -80,7 +128,20 @@ void GenerateRows(std::map<std::string, std::vector<Video>> genres, TTF_Font *fo
 		count++;
 	}
 }
+std::map<std::string, std::vector<Video>> CombineGenres(
+	const std::map<std::string, std::vector<Video>>& map1,
+	const std::map<std::string, std::vector<Video>>& map2)
+{
+	std::map<std::string, std::vector<Video>> combined = map1;
 
+	for (const auto& pair : map2) {
+		const std::string& genre = pair.first;
+		const std::vector<Video>& videos = pair.second;
+		combined[genre].insert(combined[genre].end(), videos.begin(), videos.end());
+	}
+
+	return combined;
+}
 
 int main(int argc, char* argv[]) {
 	if (TTF_Init() == -1) {
@@ -113,9 +174,12 @@ int main(int argc, char* argv[]) {
 
 	Page* page1 = new Page();
 
-	std::map<std::string, std::vector<Video>> genres = GetMovies(basePath + "assets/archivos/Peliculas.txt", font, page1);
+	std::map<std::string, std::vector<Video>> showgenres = GetShows(basePath + "assets/archivos/Series.txt", font, page1);
+	std::map<std::string, std::vector<Video>> moviegenres = GetMovies(basePath + "assets/archivos/Peliculas.txt", font, page1);
 	
-	GenerateRows(genres, font, page1);
+	auto combinedGenres = CombineGenres(showgenres, moviegenres);
+
+	GenerateRows(combinedGenres, font, page1);
 
 	page1->SetBackgroundColor(white);
 

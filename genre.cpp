@@ -10,8 +10,8 @@ Genre::Genre(std::string titleName, std::vector<std::string> videoNames, int y, 
 
 	page->AddShape(title);
 
-	scroll = new Scroll(0, 0, 1000, 5000, 50, 10);
-	Scroll* buttonScroll = new Scroll(0, 0, 1000, 5000, 0, 10);
+	scroll = new Scroll(0, 0, 1000, 5000, 50, 25);
+	Scroll* buttonScroll = new Scroll(0, 0, 1000, 5000, 0, 25);
 	
 	Image* RightArrow = new Image("right.png", 900, y+150);
 	Image* leftArrow = new Image("left.png", 50, y + 150);
