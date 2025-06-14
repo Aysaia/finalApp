@@ -23,7 +23,7 @@ int main(int argc, char* argv[]) {
 	std::string basePath = base ? base : ""; 
 	SDL_free(base);
 
-	std::string fontPath = basePath + "assets/fonts/Sans.ttf";
+	std::string fontPath = basePath + "assets/fonts/Maax.ttf";
 
 	TTF_Font* font = TTF_OpenFont(fontPath.c_str(), 100);
 	if (font == nullptr) {
@@ -44,21 +44,6 @@ int main(int argc, char* argv[]) {
 	Page* page1 = new Page();
 
 	page1->SetBackgroundColor(white);
-
-	/*
-	Textbox* actionTitle = new Textbox(50, 150, 100, 100, "Action", font, black, red);
-	VideoPoster* superman = new VideoPoster("superman", 50, 200, font, black, red, page1);
-	Scroll* actionScroll = new Scroll(0, 0, 1000, 5000, superman->GetShapes());
-	actionScroll->AddShape(actionTitle);
-
-	VideoPoster* superman2 = new VideoPoster("superman", 50, 700, font, black, red, page1);
-	Scroll* actionScroll2 = new Scroll(0, 0, 1000, 5000, superman2->GetShapes());
-
-
-	page1->AddShape(actionTitle);
-	page1->AddScroll(actionScroll);
-	page1->AddScroll(actionScroll2);
-	*/
 
 	Genre* actionGenre = new Genre("Action", { "superman", "superman", "superman" }, 150, font, black, red, page1);
 

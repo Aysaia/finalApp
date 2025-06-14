@@ -12,8 +12,6 @@ public:
 	~Genre();
 
 private:
-	Textbox* title;
+	void Scrollin(int i);
 	Scroll* scroll;
-	std::vector<VideoPoster*> posters;
-	std::vector<std::string> videoNames;
 };
