@@ -1,48 +1,50 @@
-20204216,Ad_Astra,01:58,Drama,8.0
-20182131,The_Platform,01:03,Drama,8.7
-20214856,Star_Wars_The_Rise_of_Skywalker,01:04,Animacion,8.8
-20154877,The_Lion_King,02:41,Ciencia_ficcion,5.7
-20213314,Onward,02:37,Ciencia_ficcion,7.7
-20176011,Extraction,01:15,Animacion,7.7
-20197887,Beauty_and_the_Beast,01:05,Animacion,7.3
-20233273,Inception,02:59,Animacion,6.6
-20229993,Interstellar,01:52,Animacion,8.9
+20204216,Ad Astra,01:58,Drama,8.0
+20182131,The Platform,01:03,Drama,8.7
+20214856,Star Wars: The Rise of Skywalker,01:04,Animación,8.8
+20154877,The Lion King,02:41,Ciencia ficción,5.7
+20213314,Onward,02:37,Ciencia ficción,7.7
+20176011,Extraction,01:15,Animación,7.7
+20197887,Beauty and the Beast,01:05,Animación,7.3
+20233273,Inception,02:59,Animación,6.6
+20229993,Interstellar,01:52,Animación,8.9
 20215927,Tenet,01:37,Comedia,6.7
-20212312,The_Dark_Knight,02:04,Animacion,8.3
-20165965,Avengers_Endgame,02:31,Accion,6.9
+20212312,The Dark Knight,02:04,Animación,8.3
+20165965,Avengers: Endgame,02:31,Acción,6.9
 20192427,Joker,02:40,Drama,8.9
-20233067,Parasite,01:43,Accion,8.7
-20203223,1917,01:25,Animacion,7.8
-20165923,The_Irishman,02:17,Drama,5.5
-20225606,Knives_Out,01:41,Comedia,6.2
-20206760,Soul,01:36,Animacion,5.5
-20167343,Coco,02:49,Animacion,6.4
+20233067,Parasite,01:43,Acción,8.7
+20203223,1917,01:25,Animación,7.8
+20165923,The Irishman,02:17,Drama,5.5
+20225606,Knives Out,01:41,Comedia,6.2
+20206760,Soul,01:36,Animación,5.5
+20167343,Coco,02:49,Animación,6.4
 20192848,Dune,01:05,Comedia,7.3
-20183142,Ford_v_Ferrari,02:17,Aventura,7.3
-20198442,La_La_Land,01:49,Animacion,6.6
+20183142,Ford v Ferrari,02:17,Aventura,7.3
+20198442,La La Land,01:49,Animación,6.6
 20189501,Arrival,02:12,Aventura,7.6
-20197233,Blade_Runner_2049,02:46,Aventura,7.7
-20162124,Whiplash,02:15,Animacion,8.2
-20165117,The_Revenant,01:40,Accion,5.8
+20197233,Blade Runner 2049,02:46,Aventura,7.7
+20162124,Whiplash,02:15,Animación,8.2
+20165117,The Revenant,01:40,Acción,5.8
 20174556,Gravity,01:19,Drama,6.7
-20224950,The_Martian,01:45,Aventura,6.1
-20219456,Frozen_II,02:35,Aventura,7.3
-20184742,Moana,02:20,Ciencia_ficcion,6.8
-20154453,Inside_Out,02:38,Drama,6.2
+20224950,The Martian,01:45,Aventura,6.1
+20219456,Frozen II,02:35,Aventura,7.3
+20184742,Moana,02:20,Ciencia ficción,6.8
+20154453,Inside Out,02:38,Drama,6.2
 20223940,Zootopia,02:48,Comedia,7.1
-20157432,Big_Hero_6,01:18,Comedia,7.9
-20206019,Up,01:34,Animacion,7.1
-20218068,Finding_Nemo,01:28,Accion,9.0
-20218999,Toy_Story_4,01:34,Animacion,6.6
-20208313,Ratatouille,02:21,Animacion,5.8
-20162365,Cars,02:08,Animacion,6.6
-20171176,Black_Panther,01:16,Animacion,6.6
-20233754,Doctor_Strange,02:18,Animacion,7.2
-20207780,Thor_Ragnarok,02:27,Comedia,8.2
-20233549,Guardians_of_the_Galaxy,01:50,Comedia,8.4
-20193603,Iron_Man,02:43,Ciencia_ficcion,5.6
-20238981,Captain_America_Civil_War,02:58,Aventura,5.8
+20157432,Big Hero 6,01:18,Comedia,7.9
+20151234,The Good Dinosaur,01:33,Animación,6.7
+20121456,Brave,01:33,Aventura,7.1
+20206019,Up,01:34,Animación,7.1
+20218068,Finding Nemo,01:28,Acción,9.0
+20218999,Toy Story 4,01:34,Animación,6.6
+20208313,Ratatouille,02:21,Animación,5.8
+20162365,Cars,02:08,Animación,6.6
+20171176,Black Panther,01:16,Animación,6.6
+20233754,Doctor Strange,02:18,Animación,7.2
+20207780,Thor: Ragnarok,02:27,Comedia,8.2
+20233549,Guardians of the Galaxy,01:50,Comedia,8.4
+20193603,Iron Man,02:43,Ciencia ficción,5.6
+20238981,Captain America: Civil War,02:58,Aventura,5.8
 20231362,Ant-Man,01:16,Drama,8.7
-20175566,Shang-Chi,01:40,Accion,8.0
+20175566,Shang-Chi,01:40,Acción,8.0
 20222214,Eternals,01:18,Aventura,8.6
 20227681,Luca,02:55,Comedia,8.5
