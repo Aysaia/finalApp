@@ -1,0 +1,50 @@
+20107223,Game of Thrones,Suspenso,4,7.8
+20163076,Dark,Comedia,5,6.7
+20147746,Stranger Things,Misterio,5,7.1
+20223523,La casa de papel,Suspenso,4,9.4
+20162175,Breaking Bad,Ciencia ficción,4,7.1
+20179288,The Mandalorian,Ciencia ficción,2,6.5
+20122321,The Crown,Comedia,3,8.7
+20114424,The Witcher,Misterio,4,7.4
+20136274,The Boys,Comedia,1,8.8
+20218322,The Umbrella Academy,Suspenso,2,8.1
+20204965,Money Heist,Drama,1,8.5
+20195527,Better Call Saul,Accion,1,6.5
+20169833,Peaky Blinders,Comedia,5,6.0
+20166187,Ozark,Drama,2,8.8
+20113373,Westworld,Misterio,1,6.5
+20207838,Black Mirror,Accion,2,8.3
+20156527,Fargo,Misterio,5,7.3
+20141889,The Queen's Gambit,Suspenso,2,7.4
+20183654,Narcos,Misterio,1,7.2
+20155329,Mindhunter,Ciencia ficción,5,9.0
+20111416,The Office,Comedia,1,8.9
+20206190,Parks and Recreation,Drama,1,7.8
+20147094,Brooklyn Nine-Nine,Misterio,3,7.3
+20169748,Friends,Comedia,4,7.1
+20193652,How I Met Your Mother,Drama,3,9.3
+20127082,The Big Bang Theory,Accion,3,8.4
+20111398,House of Cards,Suspenso,5,6.7
+20225276,The Handmaid's Tale,Comedia,4,8.3
+20191601,Lucifer,Accion,4,8.1
+20153133,Arrow,Drama,5,6.2
+20108490,Flash,Misterio,3,9.1
+20222179,Supergirl,Drama,4,9.0
+20133912,Gotham,Drama,2,7.7
+20153418,Titans,Ciencia ficción,4,8.3
+20227332,Daredevil,Accion,5,7.2
+20146089,Jessica Jones,Comedia,1,9.1
+20141349,Luke Cage,Drama,2,6.8
+20185510,Iron Fist,Drama,4,6.0
+20182461,The Punisher,Accion,4,6.4
+20182422,WandaVision,Drama,2,9.1
+20193173,Loki,Comedia,4,9.3
+20182373,Hawkeye,Misterio,1,9.2
+20117761,Moon Knight,Accion,3,6.3
+20174022,She-Hulk,Suspenso,2,6.2
+20186050,Ms. Marvel,Accion,1,6.5
+20162587,The Falcon and the Winter Soldier,Suspenso,4,8.8
+20165377,Andor,Ciencia ficción,5,7.0
+20192814,Obi-Wan Kenobi,Suspenso,5,6.4
+20194590,Ahsoka,Suspenso,1,8.0
+20197412,Reacher,Ciencia ficción,4,7.1
