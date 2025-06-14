@@ -23,6 +23,7 @@
     <ClCompile Include="genre.cpp" />
     <ClCompile Include="pelicula.cpp" />
     <ClCompile Include="Scroll.cpp" />
+    <ClCompile Include="series.cpp" />
     <ClCompile Include="video.cpp" />
     <ClCompile Include="videoPage.cpp" />
     <ClCompile Include="videoposter.cpp" />
@@ -42,6 +43,7 @@
     <ClInclude Include="page.h" />
     <ClInclude Include="pelicula.h" />
     <ClInclude Include="Scroll.h" />
+    <ClInclude Include="serie.h" />
     <ClInclude Include="shape.h" />
     <ClInclude Include="video.h" />
     <ClInclude Include="videoPage.h" />

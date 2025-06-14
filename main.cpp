@@ -18,14 +18,9 @@ int TestFunction(int i) {
 	return i;
 }
 
-void GetMovies(std::string filepath, TTF_Font* font, Page* page) {
+std::map<std::string, std::vector<Video>> GetMovies(std::string filepath, TTF_Font* font, Page* page) {
 	std::ifstream file(filepath);
-	std::map<std::string, std::vector<Pelicula>> genres;
-
-	if (!file.is_open()) {
-		std::cerr << "Could not open file: " << filepath << "\n";
-		return;
-	}
+	std::map<std::string, std::vector<Video>> genres;
 
 	std::string line;
 	int lineNumber = 1;
@@ -63,23 +58,28 @@ void GetMovies(std::string filepath, TTF_Font* font, Page* page) {
 		lineNumber++;
 	}
 
+	file.close();
+
+	return genres;
+}
+
+void GenerateRows(std::map<std::string, std::vector<Video>> genres, TTF_Font *font, Page *page) {
+
 	int count = 0;
+
 	for (const auto& pair : genres) {
 		const std::string& genreName = pair.first;
-		const std::vector<Pelicula>& peliculas = pair.second;
+		const std::vector<Video>& peliculas = pair.second;
 
 		std::vector<std::string> videoNames;
-		for (const Pelicula& p : peliculas) {
+		for (const Video& p : peliculas) {
 			videoNames.push_back(p.GetName());
 		}
 
-		Genre* genre = new Genre(genreName, videoNames, 150+450*count, font, { 0, 0, 0 }, { 250, 50, 10 }, page);
+		Genre* genre = new Genre(genreName, videoNames, 150 + 450 * count, font, { 0, 0, 0 }, { 250, 50, 10 }, page);
 		count++;
 	}
-
-	file.close();
 }
-
 
 
 int main(int argc, char* argv[]) {
@@ -113,7 +113,9 @@ int main(int argc, char* argv[]) {
 
 	Page* page1 = new Page();
 
-	GetMovies(basePath + "assets/archivos/Peliculas.txt", font, page1);
+	std::map<std::string, std::vector<Video>> genres = GetMovies(basePath + "assets/archivos/Peliculas.txt", font, page1);
+	
+	GenerateRows(genres, font, page1);
 
 	page1->SetBackgroundColor(white);
 
