@@ -5,16 +5,15 @@
 #include "page.h"
 
 #include <vector>
-using namespace std;
 
 
 class VideoPoster
 {
 public:
-	VideoPoster(string, int, int, TTF_Font*, SDL_Color, SDL_Color, Page*);
+	VideoPoster(std::string, int, int, TTF_Font*, SDL_Color, SDL_Color, Page*);
 	~VideoPoster();
 
-	vector<Shape*> GetShapes();
+	std::vector<Shape*> GetShapes();
 
 private:
 	Shape* shapes[2];

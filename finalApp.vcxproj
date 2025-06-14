@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="button.cpp" />
+    <ClCompile Include="genre.cpp" />
     <ClCompile Include="Scroll.cpp" />
     <ClCompile Include="videoposter.cpp" />
     <ClCompile Include="videoposter.h" />
@@ -33,6 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="button.h" />
+    <ClInclude Include="genre.h" />
     <ClInclude Include="image.h" />
     <ClInclude Include="page.h" />
     <ClInclude Include="Scroll.h" />

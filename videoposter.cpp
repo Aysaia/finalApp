@@ -1,8 +1,8 @@
 #include "videoposter.h"
 
 #pragma region VideoPoster
-VideoPoster::VideoPoster(string name, int x, int y, TTF_Font* font, SDL_Color fg, SDL_Color bg, Page* page){
-	string imagePath = name + ".png";
+VideoPoster::VideoPoster(std::string name, int x, int y, TTF_Font* font, SDL_Color fg, SDL_Color bg, Page* page){
+	std::string imagePath = name + ".png";
 	
 	this->x = x;
 	this->y = y;

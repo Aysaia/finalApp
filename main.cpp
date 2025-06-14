@@ -4,6 +4,7 @@
 #include "Scroll.h"
 #include "window.h"
 #include<iostream>
+#include "genre.h"
 
 int TestFunction(int i) {
 	std::cout << "Test function called!" << i << std::endl;
@@ -23,7 +24,6 @@ int main(int argc, char* argv[]) {
 	SDL_free(base);
 
 	std::string fontPath = basePath + "assets/fonts/Sans.ttf";
-	std::cout << "Font path: " << fontPath << std::endl;
 
 	TTF_Font* font = TTF_OpenFont(fontPath.c_str(), 100);
 	if (font == nullptr) {
@@ -45,17 +45,28 @@ int main(int argc, char* argv[]) {
 
 	page1->SetBackgroundColor(white);
 
+	/*
+	Textbox* actionTitle = new Textbox(50, 150, 100, 100, "Action", font, black, red);
+	VideoPoster* superman = new VideoPoster("superman", 50, 200, font, black, red, page1);
+	Scroll* actionScroll = new Scroll(0, 0, 1000, 5000, superman->GetShapes());
+	actionScroll->AddShape(actionTitle);
 
-	VideoPoster *superman = new VideoPoster("superman", 50, 200, font, black, red, page1);
-	Scroll *scroll1 = new Scroll(0, 100, 1000, 500, 5, 0, superman->GetShapes());
+	VideoPoster* superman2 = new VideoPoster("superman", 50, 700, font, black, red, page1);
+	Scroll* actionScroll2 = new Scroll(0, 0, 1000, 5000, superman2->GetShapes());
 
-	page1->AddScroll(scroll1);
 
+	page1->AddShape(actionTitle);
+	page1->AddScroll(actionScroll);
+	page1->AddScroll(actionScroll2);
+	*/
+
+	Genre* actionGenre = new Genre("Action", { "superman", "superman", "superman" }, 150, font, black, red, page1);
 
 	page1->AddShape(background);
 	page1->AddShape(logo);
 	window->AddPage(page1);
 	window->Start();
+
 	TTF_CloseFont(font);
 	TTF_Quit();
 	SDL_Quit();

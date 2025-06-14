@@ -14,7 +14,7 @@ public:
 private:
 	void LoadText(SDL_Renderer* renderer);
 
-	TTF_Font* font = nullptr;
+	TTF_Font* font;
 	SDL_Color textColor;
 	std::string text;
 	SDL_Surface* surface = nullptr;
