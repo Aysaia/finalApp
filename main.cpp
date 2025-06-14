@@ -73,7 +73,7 @@ void GetMovies(std::string filepath, TTF_Font* font, Page* page) {
 			videoNames.push_back(p.GetName());
 		}
 
-		Genre* genre = new Genre(genreName, videoNames, 150 + 50*count, font, { 0, 0, 0 }, { 250, 50, 10 }, page);
+		Genre* genre = new Genre(genreName, videoNames, 150+450*count, font, { 0, 0, 0 }, { 250, 50, 10 }, page);
 		count++;
 	}
 
