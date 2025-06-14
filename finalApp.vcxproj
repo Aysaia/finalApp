@@ -21,7 +21,10 @@
   <ItemGroup>
     <ClCompile Include="button.cpp" />
     <ClCompile Include="genre.cpp" />
+    <ClCompile Include="pelicula.cpp" />
     <ClCompile Include="Scroll.cpp" />
+    <ClCompile Include="video.cpp" />
+    <ClCompile Include="videoPage.cpp" />
     <ClCompile Include="videoposter.cpp" />
     <ClCompile Include="videoposter.h" />
     <ClCompile Include="image.cpp" />
@@ -37,8 +40,11 @@
     <ClInclude Include="genre.h" />
     <ClInclude Include="image.h" />
     <ClInclude Include="page.h" />
+    <ClInclude Include="pelicula.h" />
     <ClInclude Include="Scroll.h" />
     <ClInclude Include="shape.h" />
+    <ClInclude Include="video.h" />
+    <ClInclude Include="videoPage.h" />
     <ClInclude Include="window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

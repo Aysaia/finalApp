@@ -2,7 +2,7 @@
 
 #pragma region VideoPoster
 VideoPoster::VideoPoster(std::string name, int x, int y, TTF_Font* font, SDL_Color fg, SDL_Color bg, Page* page){
-	std::string imagePath = name + ".png";
+	std::string imagePath = "posters_peliculas/" + name + ".png";
 	
 	this->x = x;
 	this->y = y;

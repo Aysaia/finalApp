@@ -20,9 +20,3 @@ private:
 	int x; int y;
 };
 
-class VideoPage : public Page
-{
-
-};
-
-

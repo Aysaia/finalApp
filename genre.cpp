@@ -33,6 +33,7 @@ Genre::Genre(std::string titleName, std::vector<std::string> videoNames, int y, 
 	int count = 0;
 	for (std::string name:videoNames)
 	{
+		
 		VideoPoster* poster = new VideoPoster(name, 150 + 250*count, y + 50, font, fg, bg, page);
 
 		scroll->AddShape(poster->GetShapes()[0]);
