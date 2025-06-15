@@ -64,3 +64,21 @@ bool Image::Render(SDL_Renderer* renderer) {
     return true;
 }
 #pragma endregion
+
+void Star::Load() {
+    char* sdlBasePath = SDL_GetBasePath();
+    if (active) fileName = "star.png";
+    else fileName = "nostar.png";
+
+    std::string fullPath = std::string(sdlBasePath) + basePath + "/" + fileName;
+    SDL_free(sdlBasePath);
+
+    surface = IMG_Load(fullPath.c_str());
+    if (!surface) {
+        SDL_Log("Failed to load image: %s, SDL_image Error: %s", fullPath.c_str(), IMG_GetError());
+        return;
+    }
+
+    width = surface->w * scale;
+    height = surface->h * scale;
+}

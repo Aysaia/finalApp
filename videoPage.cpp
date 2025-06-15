@@ -1,4 +1,5 @@
 #include "videoPage.h"
+#include <iostream>
 
 VideoPage::VideoPage(std::string name, TTF_Font *font) : Page() {
 	SDL_Color black = { 0, 0, 0, 255 };
@@ -31,11 +32,36 @@ VideoPage::VideoPage(Video video, TTF_Font* font) : Page() {
 	for (char& c : name) {
 		c = std::toupper(c);
 	}
+
+	int rating = round(video.getRating()/2);
+	Textbox* audience = new Textbox(500, 200, 200, 20, "Audience Rating", font, black, black);
+	this->AddShape(audience);
+	for (int i = 0; i < 5; i++) {
+		Star* starI = new Star(500 + 45 * i, 225);
+		this->AddShape(starI);
+		if (i<rating) starI->Click(true);
+		std::cout << rating << std::endl;
+	}
+	Textbox* user = new Textbox(500, 125, 150, 20, "User Rating", font, black, black);
+	this->AddShape(user);
+	for (int i = 0; i < 5; i++) {
+		Star* starI = new Star(500 + 45 * i, 150);
+		Button* starB = new Button([this](int i) { this->changeRating(i); }, i, starI);
+		stars[i] = starI;
+		this->AddButton(starB);
+		this->AddShape(starI);
+	}
 	Textbox* title = new Textbox(500, 40, 400, 50, name, font, black, black);
 	this->SetBackgroundColor(white);
 	this->AddShape(back);
 	this->AddShape(poster);
 	this->AddShape(title);
+}
+
+void VideoPage::changeRating(int i) {
+	for (int s = 0; s < 5; s++) {
+		stars[s]->Click(s<i+1);
+	}
 }
 
 VideoPage::~VideoPage() {

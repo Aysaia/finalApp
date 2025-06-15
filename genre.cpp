@@ -32,9 +32,13 @@ Genre::Genre(std::string titleName, std::vector<Video> videos, int y, TTF_Font* 
 
 	buttonScroll->AddShape(title);
 	int count = 0;
+	
+	Image* back = new Image("left.png", 900, 150);
+	Button* backbutton = new Button([window](int i) { window->SetPage(i); }, 0, back);
 
 	for (Video video: videos)
 	{
+
 		VideoPoster* poster = new VideoPoster(video.GetName(), 150 + 250 * count, y + 50, font, fg, bg, page);
 		Shape* post = poster->GetShapes()[0];
 		Button* button = new Button([window](int i) { window->SetPage(i); }, window->GetPageNum(), post);
@@ -42,6 +46,8 @@ Genre::Genre(std::string titleName, std::vector<Video> videos, int y, TTF_Font* 
 
 		window->AddPage(videoPage);
 		page->AddButton(button);
+		videoPage->AddButton(backbutton);
+		videoPage->AddShape(back);
 
 		scroll->AddShape(poster->GetShapes()[0]);
 		scroll->AddShape(poster->GetShapes()[1]);

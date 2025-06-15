@@ -13,4 +13,11 @@ public:
 	VideoPage(std::string name, TTF_Font *font);
 	VideoPage(Video, TTF_Font* font);
 	~VideoPage();
+
+	void changeRating(int i);
+
+private:
+	int userRating = 0;
+	Star* stars[5];
+
 };
