@@ -31,14 +31,7 @@ void GenerateRows(
 		const std::string& genreName = pair.first;
 		const std::vector<Video*>& videosPtr = pair.second;
 
-		std::vector<Video> videosObj;
-		videosObj.reserve(videosPtr.size());
-
-		for (const Video* vp : videosPtr) {
-			videosObj.push_back(*vp);  // Copy the Video object from pointer
-		}
-
-		Genre* genre = new Genre(genreName, videosObj, 150 + 450 * count, font, { 0,0,0 }, { 250,50,10 }, page, window);
+		Genre* genre = new Genre(genreName, videosPtr, 150 + 450 * count, font, { 0,0,0 }, { 250,50,10 }, page, window);
 
 		count++;
 	}
@@ -61,7 +54,6 @@ std::map<std::string, std::vector<Video*>> CombineGenres(
 	return combined;
 }
 
-// CHANGE GetShows to return map<string, vector<Video*>>
 std::map<std::string, std::vector<Video*>> GetShows(std::string filepath, TTF_Font* font, Page* page) {
 	std::ifstream file(filepath);
 	std::map<std::string, std::vector<Video*>> genres;
@@ -107,7 +99,6 @@ std::map<std::string, std::vector<Video*>> GetShows(std::string filepath, TTF_Fo
 	return genres;
 }
 
-// CHANGE GetMovies to return map<string, vector<Video*>>
 std::map<std::string, std::vector<Video*>> GetMovies(std::string filepath, TTF_Font* font, Page* page) {
 	std::ifstream file(filepath);
 	std::map<std::string, std::vector<Video*>> genres;
@@ -152,7 +143,6 @@ std::map<std::string, std::vector<Video*>> GetMovies(std::string filepath, TTF_F
 	return genres;
 }
 
-// Updated main, same as before but now using pointers
 int main(int argc, char* argv[]) {
 	if (TTF_Init() == -1) {
 		std::cerr << "TTF_Init error: " << TTF_GetError() << "/n";
@@ -255,7 +245,6 @@ int main(int argc, char* argv[]) {
 	TTF_Quit();
 	SDL_Quit();
 
-	// Don't forget to free allocated memory for Video* to avoid leaks
 	for (auto& pair : showgenres) {
 		for (Video* v : pair.second) delete v;
 	}

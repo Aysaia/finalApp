@@ -12,7 +12,7 @@ Window::Window()
 	height = 600;
 	frameRate = 60;
 
-	backgroundColor = { 0, 0, 0, 255 }; // Default background color: black
+	backgroundColor = { 0, 0, 0, 255 };
 }
 Window::Window(int w, int h, const char* title, int fps, SDL_Color bgColor)
 {

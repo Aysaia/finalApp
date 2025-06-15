@@ -24,18 +24,18 @@ VideoPage::VideoPage(std::string name, TTF_Font *font) : Page() {
 	this->AddShape(title);
 }
 
-VideoPage::VideoPage(Video video, TTF_Font* font) : Page() {
+VideoPage::VideoPage(Video *video, TTF_Font* font) : Page() {
 	SDL_Color black = { 0, 0, 0, 255 };
 	SDL_Color white = { 255, 255, 255, 255 };
 	SDL_Color red = { 250, 50, 10, 255 };
-	Image* poster = new Image("posters_peliculas/" + video.GetName() + ".png", 50, 50, 400);
+	Image* poster = new Image("posters_peliculas/" + video->GetName() + ".png", 50, 50, 400);
 	Shape* back = new Shape(40, 0, 420, 750, red);
-	std::string name = video.GetName();
+	std::string name = video->GetName();
 	for (char& c : name) {
 		c = std::toupper(c);
 	}
 
-	float tRating = video.getRating();
+	float tRating = video->getRating();
 	std::ostringstream stream;
 	stream.precision(1);
 	stream << std::fixed << tRating;
@@ -59,6 +59,11 @@ VideoPage::VideoPage(Video video, TTF_Font* font) : Page() {
 		this->AddShape(starI);
 	}
 	Textbox* title = new Textbox(500, 40, 400, 50, name, font, black, black);
+	
+	std::string genre = "Genre: " + video->GetGenre();
+	Textbox* GenreBox = new Textbox(500, 350, 200, 20, genre, font, black, black);
+	this->AddShape(GenreBox);
+
 	this->SetBackgroundColor(white);
 	this->AddShape(back);
 	this->AddShape(poster);
@@ -72,5 +77,4 @@ void VideoPage::changeRating(int i) {
 }
 
 VideoPage::~VideoPage() {
-	// Destructor logic if needed
 }

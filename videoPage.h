@@ -11,7 +11,7 @@
 class VideoPage : public Page {
 public:	
 	VideoPage(std::string name, TTF_Font *font);
-	VideoPage(Video, TTF_Font* font);
+	VideoPage(Video*, TTF_Font* font);
 	~VideoPage();
 
 	void changeRating(int i);
