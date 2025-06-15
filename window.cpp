@@ -64,13 +64,13 @@ void Window::Render() {
 	}
 	if (!pages.empty()) {
 		SDL_Color backgroundColor = pages[currentPageIndex]->GetBackgroundColor();
-		SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g, backgroundColor.b, 255);
+		SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
 		SDL_RenderClear(renderer);
 		pages[currentPageIndex]->Render(renderer);
 	}
 	else
 	{
-		SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g, backgroundColor.b, 255);
+		SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
 		SDL_RenderClear(renderer);
 	}
 	SDL_RenderPresent(renderer);

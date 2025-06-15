@@ -12,11 +12,13 @@
 class Genre
 {
 public:
-	Genre(std::string title, std::vector<Video*> videos, int y, TTF_Font* font, SDL_Color fg, SDL_Color bg, Page* page, Window *window);
+	Genre(const std::string& name, const std::vector<Video*>& videos, int y, TTF_Font* font, SDL_Color fg, SDL_Color bg, Page* page, Window *window);
 	~Genre();
 
 private:
 	void Scrollin(int i);
 	Scroll* scroll;
 	Window* window;
+	std::vector<Video*> videos;
+	std::string name;
 };

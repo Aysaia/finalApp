@@ -18,8 +18,7 @@ public:
     const std::vector<Episode>& GetEpisodes() const;
     std::string GetGenre() const;
     float getRating() override;
-
-    void StartPage(Page* page, TTF_Font* font, SDL_Color, Window *window) override;
+    void StartPage(Page* page, TTF_Font* font, SDL_Color, Window* window) override;
 
 private:
     std::vector<Episode> episodes;

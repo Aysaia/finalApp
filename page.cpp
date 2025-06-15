@@ -50,7 +50,7 @@ int Page::AddShape(Shape* shape) {
 		return -1;
 	}
 	shapes.push_back(shape);
-	return shapes.size() - 1; 
+	return static_cast<int>(shapes.size());
 }
 int Page::AddButton(Button* button) {
 	if (button == nullptr) {

@@ -57,7 +57,12 @@ bool Image::Render(SDL_Renderer* renderer) {
         return false;
     }
 
-    SDL_Rect rect = { x, y, width, height };
+    int textureWidth = surface->w;
+    int textureHeight = surface->h;
+
+    SDL_Rect rect = { x, y, 0, 0 };
+    rect.w = static_cast<int>(textureWidth * scale);
+    rect.h = static_cast<int>(textureHeight * scale);
     SDL_RenderCopy(renderer, texture, nullptr, &rect);
     SDL_DestroyTexture(texture);
 

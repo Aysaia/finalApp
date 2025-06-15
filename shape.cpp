@@ -1,4 +1,6 @@
 #include "shape.h"
+#include <iostream>
+using namespace std;
 
 Shape::Shape()
     : width(100), height(100), x(0), y(0), color({ 255, 255, 255, 255 }) {
@@ -36,6 +38,17 @@ bool Shape::Hover(int x, int y) {
 }
 
 void Shape::Move(int dx, int dy) {
+    std::cout << "Move(dx, dy) llamado" << std::endl;
     x += dx;
     y += dy;
+}
+
+void Shape::Move(const SDL_Point& p) {
+    std::cout << "Move(SDL_Point) llamado" << std::endl;
+    x += p.x;
+    y += p.y;
+}
+
+bool Shape::operator==(const Shape& other) const {
+    return x == other.x && y == other.y && width == other.width && height == other.height;
 }

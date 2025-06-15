@@ -10,7 +10,7 @@ public:
 	Textbox(int x, int y, int w, int h, std::string t, TTF_Font* f, SDL_Color bg, SDL_Color textColor);
 	~Textbox();
 
-	bool Render(SDL_Renderer* renderer) override;
+	bool Render(SDL_Renderer* renderer);
 
 private:
 	void LoadText(SDL_Renderer* renderer);

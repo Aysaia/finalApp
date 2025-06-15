@@ -9,7 +9,6 @@ VideoPage::VideoPage(std::string name, TTF_Font *font) : Page() {
 	SDL_Color red = { 250, 50, 10, 255 };
 
 	Image* poster = new Image("posters_peliculas/" + name + ".png", 50, 50, 400);
-	Shape* back = new Shape(40, 0, 420, 750, red); 
 	
 	for (char& c : name) {
 		c = std::toupper(c);
@@ -19,7 +18,6 @@ VideoPage::VideoPage(std::string name, TTF_Font *font) : Page() {
 
 	this-> SetBackgroundColor(white);
 
-	this->AddShape(back);
 	this->AddShape(poster);
 	this->AddShape(title);
 }
@@ -29,7 +27,6 @@ VideoPage::VideoPage(Video *video, TTF_Font* font) : Page() {
 	SDL_Color white = { 255, 255, 255, 255 };
 	SDL_Color red = { 250, 50, 10, 255 };
 	Image* poster = new Image("posters_peliculas/" + video->GetName() + ".png", 50, 50, 400);
-	Shape* back = new Shape(40, 0, 420, 750, red);
 	std::string name = video->GetName();
 	for (char& c : name) {
 		c = std::toupper(c);
@@ -52,11 +49,10 @@ VideoPage::VideoPage(Video *video, TTF_Font* font) : Page() {
 	Textbox* user = new Textbox(500, 125, 150, 20, "User Rating", font, black, black);
 	this->AddShape(user);
 	for (int i = 0; i < 5; i++) {
-		Star* starI = new Star(500 + 45 * i, 150);
-		Button* starB = new Button([this](int i) { this->changeRating(i); }, i, starI);
-		stars[i] = starI;
+		stars[i] = new Star(40 + 80 * i, 615, static_cast<int>(rating * 100), 100, 100);
+		Button* starB = new Button([this](int i) { this->changeRating(i); }, i, stars[i]);
 		this->AddButton(starB);
-		this->AddShape(starI);
+		this->AddShape(stars[i]);
 	}
 	Textbox* title = new Textbox(500, 40, 400, 50, name, font, black, black);
 	
@@ -65,7 +61,6 @@ VideoPage::VideoPage(Video *video, TTF_Font* font) : Page() {
 	this->AddShape(GenreBox);
 
 	this->SetBackgroundColor(white);
-	this->AddShape(back);
 	this->AddShape(poster);
 	this->AddShape(title);
 }

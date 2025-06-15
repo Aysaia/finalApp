@@ -15,6 +15,14 @@ Video::Video(int id, const std::string& name, const std::string& genre, float ra
 
 float Video::getRating() { return rating; }
 
+bool Video::operator==(const Video& other) const {
+    return name == other.name && genre == other.genre;
+}
+
+bool Video::operator<(const Video& other) const {
+    return rating > other.rating; // Para que el mayor rating aparezca primero
+}
+
 Video::~Video()
 {
 }

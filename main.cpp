@@ -29,9 +29,33 @@ void GenerateRows(
 
 	for (const auto& pair : genres) {
 		const std::string& genreName = pair.first;
-		const std::vector<Video*>& videosPtr = pair.second;
+		std::vector<Video*> videosPtr = pair.second;
+
+		std::sort(videosPtr.begin(), videosPtr.end(), [](Video* a, Video* b) {
+			return a->getRating() > b->getRating();
+		});
+
+		std::cout << "--- Genero: " << genreName << " ---" << std::endl;
+		for (auto* v : videosPtr) {
+			std::string tipo = (dynamic_cast<Series*>(v) != nullptr) ? "Serie" : "Pelicula";
+			std::cout << tipo << ": " << v->GetName() << " - " << v->getRating() << std::endl;
+		}
+		std::cout << "--- Fin Genero: " << genreName << " ---" << std::endl;
 
 		Genre* genre = new Genre(genreName, videosPtr, 150 + 450 * count, font, { 0,0,0 }, { 250,50,10 }, page, window);
+
+		int y = 150 + 450 * count; // Example y-coordinate
+		SDL_Color color = { 0, 0, 0 };
+		SDL_Color accent = { 250, 50, 10 };
+
+		for (auto* video : videosPtr) {
+			VideoPoster* poster = new VideoPoster(video->GetName(), 150 + 250 * count, y + 50, font, color, accent, page);
+			Shape* post = poster->GetShapes()[0];
+			Button* button = new Button([window, video](int i) { 
+				std::cout << "Pelicula ID: " << video->GetID() << std::endl; 
+				window->SetPage(i); 
+			}, window->GetPageNum(), post);
+		}
 
 		count++;
 	}
@@ -82,6 +106,7 @@ std::map<std::string, std::vector<Video*>> GetShows(std::string filepath, TTF_Fo
 
 		try {
 			int sid = std::stoi(sidStr);
+			std::cout << "Serie ID leido: " << sid << std::endl;
 			int seasons = std::stoi(seasonsStr);
 			float rating = std::stof(ratingStr);
 
@@ -127,6 +152,7 @@ std::map<std::string, std::vector<Video*>> GetMovies(std::string filepath, TTF_F
 
 		try {
 			int id = std::stoi(idStr);
+			std::cout << "Pelicula ID leido: " << id << std::endl;
 			float rating = std::stof(ratingStr);
 
 			Pelicula* pelicula = new Pelicula(id, name, genre, rating, length);
@@ -142,6 +168,7 @@ std::map<std::string, std::vector<Video*>> GetMovies(std::string filepath, TTF_F
 	file.close();
 	return genres;
 }
+
 
 int main(int argc, char* argv[]) {
 	if (TTF_Init() == -1) {
@@ -171,7 +198,7 @@ int main(int argc, char* argv[]) {
 	window->AddPage(page1);
 
 	Image* logo = new Image("logo.png", 500 - 322 / 2, 25);
-	Shape* background = new Shape(0, 20, 1000, 120, red);
+
 
 	auto showgenres = GetShows(basePath + "assets/archivos/Series.txt", font, page1);
 	auto moviegenres = GetMovies(basePath + "assets/archivos/Peliculas.txt", font, page1);
@@ -212,13 +239,12 @@ int main(int argc, char* argv[]) {
 			int season = std::stoi(seasonStr);
 			float rating = std::stof(ratingStr);
 
-			Episode ep(seriesId, idEp, name, length, rating, season);
 			auto it = seriesById.find(seriesId);
-
 			if (it != seriesById.end()) {
+				std::string genre = it->second->GetGenre(); // <-- Solución aquí
+				Episode ep(seriesId, idEp, name, genre, length, rating, season);
 				it->second->AddEpisode(ep);
-			}
-			else {
+			} else {
 				std::cerr << "No matching series found for episode on line " << lineNumber << ", ID: " << seriesId << "\n";
 			}
 		}
@@ -236,8 +262,13 @@ int main(int argc, char* argv[]) {
 	GenerateRows(combinedGenres, font, page1, window);
 
 	page1->SetBackgroundColor(white);
-	page1->AddShape(background);
+
 	page1->AddShape(logo);
+
+	Shape s;
+	s.Move(5, 10); // Imprime: Move(dx, dy) llamado
+	SDL_Point p = {2, 3};
+	s.Move(p);     // Imprime: Move(SDL_Point) llamado
 
 	window->Start();
 

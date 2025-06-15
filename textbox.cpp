@@ -30,7 +30,7 @@ void Textbox::LoadText(SDL_Renderer* renderer) {;
 	
 	height = round(wh * width);
 	rect = { x, y, width, height};
-
+	rect.w = static_cast<int>(surface->w);
 }
 
 bool Textbox::Render(SDL_Renderer* renderer) {

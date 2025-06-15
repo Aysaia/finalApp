@@ -11,7 +11,7 @@ public:
     ~Image();
 
     virtual void Load();
-    bool Render(SDL_Renderer* renderer) override;
+    bool Render(SDL_Renderer* renderer);
 
 protected:
     std::string basePath = "assets/images";
