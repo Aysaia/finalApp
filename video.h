@@ -11,6 +11,7 @@ public:
 	~Video();
 	virtual void StartPage(Page* page, TTF_Font* font) {};
 	std::string GetName() const { return name; }
+	int GetID() { return id;  };
 	virtual float getRating();
 
 protected:

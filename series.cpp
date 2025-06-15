@@ -8,20 +8,16 @@ Series::Series(int id, const std::string& name, const std::string& genre, float 
 }
 
 Series::~Series() {
-    for (Episode* ep : episodes) {
-        delete ep;
-    }
-    episodes.clear();
 }
 
-void Series::AddEpisode(Episode* ep) {
+void Series::AddEpisode(Episode ep) {
     episodes.push_back(ep);
 }
 
-const std::vector<Episode*>& Series::GetEpisodes() const {
+const std::vector<Episode>& Series::GetEpisodes() const {
     return episodes;
 }
 
 std::string Series::GetGenre() const {
-    return genre;  // assuming Video has `protected: std::string genre;`
+    return genre;
 }
