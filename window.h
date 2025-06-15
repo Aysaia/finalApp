@@ -16,6 +16,9 @@ public:
 	bool AddPage(Page*);
 	Page* GetPage(int);
 
+	int GetPageNum();
+	void SetPage(int);
+
 private:
 	SDL_Window* window;
 	SDL_Renderer* renderer;

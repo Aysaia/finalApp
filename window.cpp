@@ -92,4 +92,12 @@ Page* Window::GetPage(int index)
 	}
 	return pages[index];
 }
+void Window::SetPage(int id) {
+
+	currentPageIndex = id;
+	std::cout << id;
+}
+int Window::GetPageNum() {
+	return pages.size();
+}
 #pragma endregion

@@ -50,7 +50,6 @@ std::map<std::string, std::vector<Video>> GetShows(std::string filepath, TTF_Fon
 			int seasons = std::stoi(seasonsStr);
 			float rating = std::stof(ratingStr);
 
-			// Create a Series object with no episodes for now
 			Series s(sid, sname, genre, rating, seasons);
 			genres[genre].push_back(s);
 		}
@@ -111,7 +110,7 @@ std::map<std::string, std::vector<Video>> GetMovies(std::string filepath, TTF_Fo
 	return genres;
 }
 
-void GenerateRows(std::map<std::string, std::vector<Video>> genres, TTF_Font *font, Page *page) {
+void GenerateRows(std::map<std::string, std::vector<Video>> genres, TTF_Font *font, Page *page, Window *window) {
 
 	int count = 0;
 
@@ -124,7 +123,7 @@ void GenerateRows(std::map<std::string, std::vector<Video>> genres, TTF_Font *fo
 			videoNames.push_back(p.GetName());
 		}
 
-		Genre* genre = new Genre(genreName, videoNames, 150 + 450 * count, font, { 0, 0, 0 }, { 250, 50, 10 }, page);
+		Genre* genre = new Genre(genreName, videoNames, 150 + 450 * count, font, { 0, 0, 0 }, { 250, 50, 10 }, page, window);
 		count++;
 	}
 }
@@ -173,20 +172,20 @@ int main(int argc, char* argv[]) {
 	Shape* background = new Shape(0, 20, 1000, 120, red);
 
 	Page* page1 = new Page();
+	window->AddPage(page1);
 
 	std::map<std::string, std::vector<Video>> showgenres = GetShows(basePath + "assets/archivos/Series.txt", font, page1);
 	std::map<std::string, std::vector<Video>> moviegenres = GetMovies(basePath + "assets/archivos/Peliculas.txt", font, page1);
 	
 	auto combinedGenres = CombineGenres(showgenres, moviegenres);
 
-	GenerateRows(combinedGenres, font, page1);
+	GenerateRows(combinedGenres, font, page1, window);
 
 	page1->SetBackgroundColor(white);
 
 	page1->AddShape(background);
 	page1->AddShape(logo);
 
-	window->AddPage(page1);
 	
 	window->Start();
 
