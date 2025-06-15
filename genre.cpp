@@ -5,7 +5,7 @@ void Genre::Scrollin(int i) {
 	scroll->Move(i, 0);
 }
 
-Genre::Genre(std::string titleName, std::vector<std::string> videoNames, int y, TTF_Font* font, SDL_Color fg, SDL_Color bg, Page* page, Window *window) {
+Genre::Genre(std::string titleName, std::vector<Video> videos, int y, TTF_Font* font, SDL_Color fg, SDL_Color bg, Page* page, Window *window) {
 	this->window = window;
 	Textbox *title = new Textbox(150, y, 100, 100, titleName, font, fg, bg);
 
@@ -33,12 +33,12 @@ Genre::Genre(std::string titleName, std::vector<std::string> videoNames, int y, 
 	buttonScroll->AddShape(title);
 	int count = 0;
 
-	for (std::string name:videoNames)
+	for (Video video: videos)
 	{
-		VideoPoster* poster = new VideoPoster(name, 150 + 250*count, y + 50, font, fg, bg, page);
+		VideoPoster* poster = new VideoPoster(video.GetName(), 150 + 250 * count, y + 50, font, fg, bg, page);
 		Shape* post = poster->GetShapes()[0];
 		Button* button = new Button([window](int i) { window->SetPage(i); }, window->GetPageNum(), post);
-		VideoPage* videoPage = new VideoPage(name, font);
+		VideoPage* videoPage = new VideoPage(video, font);
 
 		window->AddPage(videoPage);
 		page->AddButton(button);

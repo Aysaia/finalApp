@@ -123,7 +123,7 @@ void GenerateRows(std::map<std::string, std::vector<Video>> genres, TTF_Font *fo
 			videoNames.push_back(p.GetName());
 		}
 
-		Genre* genre = new Genre(genreName, videoNames, 150 + 450 * count, font, { 0, 0, 0 }, { 250, 50, 10 }, page, window);
+		Genre* genre = new Genre(genreName, peliculas, 150 + 450 * count, font, { 0, 0, 0 }, { 250, 50, 10 }, page, window);
 		count++;
 	}
 }

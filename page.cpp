@@ -33,6 +33,7 @@ void Page::CheckButtons(int x, int y) {
 	for (Button* button : buttons) {
 		if (button->Hover(x, y)) {
 			button->Click();
+			break;
 		}
 	}
 }
