@@ -25,12 +25,28 @@ float Series::getRating() {
 
     return total / episodes.size();
 }
-void Series::StartPage(Page* page, TTF_Font* font, SDL_Color color) {
+void Series::StartPage(Page* page, TTF_Font* font, SDL_Color color, Window* window) {
     int s = 0;
+
+    SDL_Color white = { 255,255,255 };
+    Textbox* goBack = new Textbox(650, 125, 150, 30, "Go Back", font, white, white);
+    Button* buttonBack = new Button([window](int i) {window->SetPage(i);}, window->GetPageNum()-1, goBack);
     for (std::vector<Episode> season : Seasons) {
         std::string tag = "Season.- " + std::to_string(s + 1);
         Textbox* seasonText = new Textbox(500, 400 + 35 * s, 140, 30, tag, font, color, color);
+        Button* button = new Button([window](int i) { window->SetPage(i); }, window->GetPageNum(), seasonText);
+
+        SeasonPage* seasonPage = new SeasonPage(season, font);
+
+        seasonPage->AddShape(goBack);
+        seasonPage->AddButton(buttonBack);
+
+        window->AddPage(seasonPage);
+
+
         page->AddShape(seasonText);
+        page->AddButton(button);
+        //window->AddPage(seasonPage);
         s++;
     }
 }

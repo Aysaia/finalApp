@@ -66,6 +66,9 @@
     <ClCompile Include="genre.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="seasonPage.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shape.h">
@@ -102,6 +105,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="videoPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="seasonPage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

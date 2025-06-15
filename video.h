@@ -3,6 +3,7 @@
 #include "page.h"
 #include <SDL_TTF.h>
 #include <iostream>
+#include "window.h"
 
 class Video
 {
@@ -10,7 +11,7 @@ public:
 	Video();
 	Video(int id, const std::string& name, const std::string& genre, float rating);
 	~Video();
-	virtual void StartPage(Page* page, TTF_Font* font, SDL_Color) { std::cout << "FUCK" << std::endl;};
+	virtual void StartPage(Page* page, TTF_Font* font, SDL_Color, Window* window) {};
 	std::string GetName() const { return name; }
 	int GetID() { return id; };
 	virtual float getRating();

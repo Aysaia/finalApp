@@ -22,6 +22,7 @@ Textbox::~Textbox() {
 
 void Textbox::LoadText(SDL_Renderer* renderer) {;
 
+	std::replace(text.begin(), text.end(), '_', ' ');
 	surface = TTF_RenderText_Solid(font, text.c_str(), textColor);
 	texture = SDL_CreateTextureFromSurface(renderer, surface);
 

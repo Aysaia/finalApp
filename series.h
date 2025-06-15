@@ -2,8 +2,11 @@
 #include "video.h"
 #include "episode.h"
 #include "textbox.h"
+#include "seasonPage.h"
 #include <vector>
 #include <string>
+#include <iomanip>
+#include <sstream>
 
 class Series : public Video {
 public:
@@ -16,7 +19,7 @@ public:
     std::string GetGenre() const;
     float getRating() override;
 
-    void StartPage(Page* page, TTF_Font* font, SDL_Color) override;
+    void StartPage(Page* page, TTF_Font* font, SDL_Color, Window *window) override;
 
 private:
     std::vector<Episode> episodes;

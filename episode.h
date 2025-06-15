@@ -7,6 +7,7 @@ public:
        : Video(id, name, genre, rating), season(season), length(length), epid(epid) {}
    ~Episode();
 
+   std::string getLength() { return length; };
    int getSeason() { return season; };
 
 private:

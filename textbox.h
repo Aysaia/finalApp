@@ -2,6 +2,7 @@
 #include "shape.h"
 #include <SDL_ttf.h>
 #include <string>
+#include <algorithm>
 
 class Textbox : public Shape {
 public:

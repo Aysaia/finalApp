@@ -4,7 +4,7 @@ Pelicula::Pelicula(int id, const std::string& name, const std::string& genre, fl
 	this->length = length;
 	
 }
-void Pelicula::StartPage(Page* page, TTF_Font *font, SDL_Color color) {  
+void Pelicula::StartPage(Page* page, TTF_Font *font, SDL_Color color, Window* window) {
    std::string durationText = "Duration: " + length;  
    Textbox *lengthTextbox = new Textbox(500, 400, 200, 200, durationText, font, color, color);  
    page->AddShape(lengthTextbox);

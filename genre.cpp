@@ -44,9 +44,9 @@ Genre::Genre(std::string titleName, std::vector<Video*> videos, int y, TTF_Font*
 		Button* button = new Button([window](int i) { window->SetPage(i); }, window->GetPageNum(), post);
 		VideoPage* videoPage = new VideoPage(video, font);
 
-		video->StartPage(videoPage, font, bg);
-
 		window->AddPage(videoPage);
+		video->StartPage(videoPage, font, bg, window);
+
 		page->AddButton(button);
 		videoPage->AddButton(backbutton);
 		videoPage->AddShape(back);
