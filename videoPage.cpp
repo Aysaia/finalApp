@@ -1,5 +1,7 @@
 #include "videoPage.h"
 #include <iostream>
+#include <format>
+#include <sstream>
 
 VideoPage::VideoPage(std::string name, TTF_Font *font) : Page() {
 	SDL_Color black = { 0, 0, 0, 255 };
@@ -33,8 +35,13 @@ VideoPage::VideoPage(Video video, TTF_Font* font) : Page() {
 		c = std::toupper(c);
 	}
 
-	int rating = round(video.getRating()/2);
-	Textbox* audience = new Textbox(500, 200, 200, 20, "Audience Rating", font, black, black);
+	float tRating = video.getRating();
+	std::ostringstream stream;
+	stream.precision(1);
+	stream << std::fixed << tRating;
+	Textbox* audience = new Textbox(500, 200, 200, 20, "Audience Rating (" + stream.str() + ")", font, black, black);
+
+	int rating = round(tRating/2);
 	this->AddShape(audience);
 	for (int i = 0; i < 5; i++) {
 		Star* starI = new Star(500 + 45 * i, 225);
