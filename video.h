@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "page.h"
+#include <SDL_TTF.h>
 
 class Video
 {
